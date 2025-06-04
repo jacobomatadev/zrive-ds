@@ -25,3 +25,12 @@ seaborn = "^0.13.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# pyproject.toml
+[tool.mypy] # ← equivale al [mypy] global del .ini
+plugins = ["numpy.typing.mypy_plugin"]
+
+# Ignorar solo los avisos de “stubs faltantes” en scikit-learn
+[[tool.mypy.overrides]] # se puede repetir tantas veces como necesites
+module = "sklearn.*"
+ignore_missing_imports = true
