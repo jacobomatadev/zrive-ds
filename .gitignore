@@ -161,4 +161,4 @@ cython_debug/
 .vscode/
 
 data/
-eda.ipynb
+*.ipynb
